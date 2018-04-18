@@ -22,7 +22,9 @@ AUTHOR = 'Beer Theory Society'
 REQUIRED = [
     'numpy',
     'scipy',
-    'lmfit'
+    'lmfit',
+    'corner',
+    'pandas'
 ]
 
 # The rest you shouldn't have to touch too much :)
