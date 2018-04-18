@@ -15,24 +15,26 @@ class Spectrum(object):
         self.ydata = None
         self.xmodel = None
         self.ymodel = None
+        self.parameters = None
 
-    def fit(xdata, ydata, fit):
+    def fit(self, xdata, ydata, distribution):
         """Use the specified fit function to fit a model to the data."""
-
-        # Call fit function.
-        self.r = fit(xdata, ydata)
-
         # Store the x and y data as arrays, attributes of the Spectrum object.
         self.xdata = np.array(xdata)
         self.ydata = np.array(ydata)
+
+        # Call fit function. Store results and parameters.
+        r, parameters = fit(self.xdata, self.ydata, distribution)
+        self.r = r
+        self.parameters = parameters
 
     def plot_fit(self, curve):
         """Function to generate a quick x vs. y plot of the Spectrum fit."""
 
         # Plot fitter results
         self.xmodel = np.linspace(0,10, 1000)
-        self.ymodel = curve(xmodel, self.r.params)
+        self.ymodel = curve(self.xmodel, self.r.params)
 
         plt.plot(self.xdata, self.ydata , '.')
         plt.plot(self.xmodel, self.ymodel, '-')
-        #parameters.pretty_print()
+        self.parameters.pretty_print()
