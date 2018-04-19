@@ -62,7 +62,7 @@ def fit(xdata, ydata, distribution):
                             args=[distribution, xdata],
                             kws={'ydata': ydata})
 
-    return results
+    return results, parameters
 
 
 def bayes_fit(xdata, ydata, distribution, burn=100, steps=1000, thin=20):
@@ -131,4 +131,4 @@ def bayes_fit(xdata, ydata, distribution, burn=100, steps=1000, thin=20):
     # Use the emcee version of minimizer class to perform MCMC sampling
     bayes_results = mini.emcee(burn=burn, steps=steps, thin=thin, params=ML_results.params)
 
-    return bayes_results
+    return bayes_results, parameters
