@@ -1,6 +1,6 @@
 
 from .base import BaseSpectrum
-from .curves import gaussian
+from .curves import gaussian, lorentzian
 
 
 class GaussianSpectrum(BaseSpectrum):
