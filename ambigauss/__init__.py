@@ -1,2 +1,2 @@
 from .curves import gaussian, lorentzian
-from .spectra import GaussianSpectrum, Lorentzian
+from .spectra import GaussianSpectrum, LorentzianSpectrum
