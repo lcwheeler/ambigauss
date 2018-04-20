@@ -1,3 +1,2 @@
-from .fitter import fit, bayes_fit
-from .curves import gaussian, lorentzian, multigaussian, multilorentzian
-from .spectrum import Spectrum
+from .curves import gaussian, lorentzian
+from .spectra import GaussianSpectrum
