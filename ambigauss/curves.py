@@ -39,7 +39,7 @@ def lorentzian(x, amp, center, width):
         normalized Lorentzian distribution
     """
     distribution = amp*0.5*width/((x-center)**2+(0.5*width)**2)
-    return distribution    
+    return distribution
 
 def multigaussian(x, parameters):
     """Build array of gaussians from multiple gaussian parameters.
