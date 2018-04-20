@@ -9,3 +9,10 @@ class GaussianSpectrum(BaseSpectrum):
     Better documentation for real spectrum.
     """
     lineshape = staticmethod(gaussian)
+
+class LorentzianSpectrum(BaseSpectrum):
+    """Gaussian Spectrum.
+
+    Better documentation for real spectrum.
+    """
+    lineshape = staticmethod(lorentzian)
